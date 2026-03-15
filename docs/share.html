@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Share - Secure & Share Docs</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-badge">SS</div>
+          Secure & Share Docs
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="upload.html">Upload</a>
+          <a href="profile.html">My Profile</a>
+          <a href="#" id="logout-link">Logout</a>
+        </nav>
+      </header>
+
+      <section class="section">
+        <div class="card">
+          <h1>Share Document</h1>
+          <p>Select a document and grant access to a family member.</p>
+          <form class="form" id="share-form">
+            <div>
+              <label for="share-doc">Select Document</label>
+              <select id="share-doc" required></select>
+            </div>
+            <div>
+              <label for="share-email">Family Member Email (optional)</label>
+              <input id="share-email" type="email" placeholder="example@email.com" />
+            </div>
+            <div>
+              <label for="share-aadhaar">Family Member Aadhaar (optional)</label>
+              <input id="share-aadhaar" type="text" minlength="12" maxlength="12" />
+            </div>
+            <div>
+              <label for="share-permission">Permission</label>
+              <select id="share-permission">
+                <option value="view">View</option>
+              </select>
+            </div>
+            <button type="submit">Grant Access</button>
+            <div class="status" id="share-status"></div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="js/share.js"></script>
+  </body>
+</html>

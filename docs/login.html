@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Secure & Share Docs</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-badge">SS</div>
+          Secure & Share Docs
+        </div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="register.html">Register</a>
+        </nav>
+      </header>
+
+      <section class="section auth-shell">
+        <div class="auth-info">
+          <span class="badge">Trusted access</span>
+          <h1>Resume your secure dashboard</h1>
+          <p>Log in to manage your documents, permissions, and verification logs.</p>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-value">Zero</div>
+              <div class="stat-label">Paperwork</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">Instant</div>
+              <div class="stat-label">Sharing</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">Secure</div>
+              <div class="stat-label">Audit trail</div>
+            </div>
+          </div>
+        </div>
+        <div class="auth-card">
+          <h1>Welcome back</h1>
+          <p>Login to access your documents.</p>
+          <form class="form" id="login-form">
+            <div>
+              <label for="login-email">Email</label>
+              <input id="login-email" type="email" required />
+            </div>
+            <div class="input-wrap">
+              <label for="login-password">Password</label>
+              <div class="input-eye">
+                <input id="login-password" type="password" required />
+                <button type="button" class="eye-toggle" data-target="login-password" aria-label="Show password">
+                  <span class="eye-icon"></span>
+                </button>
+              </div>
+            </div>
+            <button type="submit">Login</button>
+            <div class="status" id="login-status"></div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+</html>

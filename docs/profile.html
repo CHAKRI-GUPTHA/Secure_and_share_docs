@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile - Secure & Share Docs</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-badge">SS</div>
+          Secure & Share Docs
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="upload.html">Upload</a>
+          <a href="share.html">Share</a>
+          <a href="#" id="logout-link">Logout</a>
+        </nav>
+      </header>
+
+      <section class="section">
+        <div class="card">
+          <h1>My Profile</h1>
+          <p>Update your profile details.</p>
+          <form class="form" id="profile-form">
+            <div>
+              <label for="profile-name">Full Name</label>
+              <input id="profile-name" type="text" required />
+            </div>
+            <div>
+              <label for="profile-email">Email</label>
+              <input id="profile-email" type="email" disabled />
+            </div>
+            <div>
+              <label for="profile-phone">Phone</label>
+              <input id="profile-phone" type="tel" />
+            </div>
+            <div class="input-wrap">
+              <label for="profile-aadhaar">Aadhaar Number</label>
+              <div class="input-eye">
+                <input id="profile-aadhaar" type="password" minlength="12" maxlength="12" required />
+                <button type="button" class="eye-toggle" data-target="profile-aadhaar" aria-label="Show Aadhaar">
+                  <span class="eye-icon"></span>
+                </button>
+              </div>
+            </div>
+            <button type="submit">Save Changes</button>
+            <div class="status" id="profile-status"></div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="js/profile.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+</html>
