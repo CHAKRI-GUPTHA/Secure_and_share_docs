@@ -507,6 +507,9 @@ app.get("/api/documents/:id/file", authRequired, (req, res) => {
     return res.status(404).send("File missing");
   }
 
+  const safeName = path.basename(docRecord.fileName || docRecord.name || "document");
+  const inlineName = safeName.replace(/"/g, "");
+  res.setHeader("Content-Disposition", `inline; filename="${inlineName}"`);
   res.sendFile(path.resolve(docRecord.storagePath));
 });
 
