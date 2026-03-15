@@ -11,7 +11,11 @@ if (paramBase) {
 
 const storedBase = (localStorage.getItem("app_api_base") || "").trim();
 const manualBase = window.APP_API_BASE || storedBase || paramBase || "";
-const API_BASE = manualBase || (isLocalhost && !runningOnApiPort ? `http://${hostName}:${API_PORT}` : "");
+const githubPagesDefault = hostName.endsWith("github.io") ? "https://secure-and-share-docs.onrender.com" : "";
+const API_BASE =
+  manualBase ||
+  githubPagesDefault ||
+  (isLocalhost && !runningOnApiPort ? `http://${hostName}:${API_PORT}` : "");
 
 export function getToken() {
   return localStorage.getItem("auth_token");
