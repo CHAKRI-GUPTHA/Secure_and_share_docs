@@ -17,6 +17,10 @@ const API_BASE =
   githubPagesDefault ||
   (isLocalhost && !runningOnApiPort ? `http://${hostName}:${API_PORT}` : "");
 
+export function getApiBase() {
+  return API_BASE;
+}
+
 export function getToken() {
   return localStorage.getItem("auth_token");
 }

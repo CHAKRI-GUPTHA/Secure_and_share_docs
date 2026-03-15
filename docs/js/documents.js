@@ -1,4 +1,4 @@
-import { apiFetch, getToken, clearToken } from "./api.js";
+import { apiFetch, getToken, clearToken, getApiBase } from "./api.js";
 
 const myDocsContainer = document.getElementById("my-docs");
 const sharedDocsContainer = document.getElementById("shared-docs");
@@ -46,7 +46,12 @@ function createDocCard(doc, isShared) {
   viewBtn.addEventListener("click", () => {
     const token = getToken();
     if (doc.fileUrl && token) {
-      window.open(`${doc.fileUrl}?token=${token}`, "_blank");
+      const apiBase = getApiBase();
+      const normalized = doc.fileUrl.startsWith("http")
+        ? doc.fileUrl
+        : `${apiBase}${doc.fileUrl}`;
+      const joiner = normalized.includes("?") ? "&" : "?";
+      window.open(`${normalized}${joiner}token=${token}`, "_blank");
     }
   });
 
