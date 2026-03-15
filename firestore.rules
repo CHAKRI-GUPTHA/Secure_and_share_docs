@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isOwner() {
+      return resource.data.ownerId == request.auth.uid;
+    }
+
+    function isShared() {
+      return (request.auth.token.email in resource.data.sharedToEmails)
+        || (userDoc().aadhaar in resource.data.sharedToAadhaar);
+    }
+
+    match /users/{userId} {
+      allow read, write: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    match /documents/{docId} {
+      allow create: if isSignedIn() && request.resource.data.ownerId == request.auth.uid;
+      allow read: if isSignedIn() && (isOwner() || isShared());
+      allow update, delete: if isSignedIn() && isOwner();
+    }
+
+    match /shares/{shareId} {
+      allow create: if isSignedIn() && request.resource.data.ownerId == request.auth.uid;
+      allow read: if isSignedIn() && request.auth.uid == resource.data.ownerId;
+      allow update, delete: if false;
+    }
+
+    match /logs/{logId} {
+      allow create: if isSignedIn() && request.resource.data.uid == request.auth.uid;
+      allow read: if isSignedIn() && request.auth.uid == resource.data.uid;
+      allow update, delete: if false;
+    }
+  }
+}

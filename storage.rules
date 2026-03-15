@@ -1,0 +1,26 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function docData(docId) {
+      return firestore.get(/databases/$(database)/documents/documents/$(docId)).data;
+    }
+
+    function userData() {
+      return firestore.get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isShared(docId) {
+      return (request.auth.token.email in docData(docId).sharedToEmails)
+        || (userData().aadhaar in docData(docId).sharedToAadhaar);
+    }
+
+    match /documents/{uid}/{docId}/{fileName} {
+      allow read: if isSignedIn() && (request.auth.uid == uid || isShared(docId));
+      allow write: if isSignedIn() && request.auth.uid == uid;
+    }
+  }
+}

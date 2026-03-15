@@ -1,0 +1,54 @@
+Problem Statement:
+Citizens will be able to keep documents such as mark sheets, PAN cards, 
+passports, and other important documents in digital format as a result of this 
+advancement. Simultaneously, it aims to cut government spending, lowering the 
+government's overhead costs. It will lessen the risks of losing crucial documents by 
+linking each member's Adhaar number, which is a unique number given to all 
+cardholders. The internet system allows you to share them. Physical copies of 
+documents will become obsolete in the near future. It will provide services in all 
+main categories, including education, health care, railroads, and other speciﬁcs.
+User
+Project Title Secure & Share Govt Document with Family 
+Members
+Technologies HTML, CSS, JS, and Firebase
+Domain Industry
+Project Diﬃculties levelMedium
+Register
+Verify OTP
+
+Project Evaluation metrics:
+Code: 
+Database: 
+Logging: Login
+Upload doc
+Update/Delete Doc
+Share Doc
+My Proﬁle
+You are supposed to write a code in a modular fashion
+Safe: It can be used without causing harm.
+Testable: It can be tested at the code level.
+Maintainable: It can be maintained, even as your codebase grows.
+Portable: It works the same in every environment (operating system) 
+You have to maintain your code on GitHub.
+You have to keep your GitHub repo public so that anyone can check your code. 
+Proper readme ﬁle you have to maintain for any project development. 
+You should include basic workﬂow and execution of the entire project in the 
+readme ﬁle on GitHub 
+Follow the coding standards.
+You are supposed to use FireBase.
+Logging is a must for every action performed by your code, use the JavaScript 
+or python logging library for this. 
+
+Deployment: 
+Optimization of solutions: 
+Submission requirements: 
+Project code:
+You have to submit your code to the GitHub repo and you have to share the repo 
+link at ﬁnal submission of your project. 
+Detail project report:
+You have to create a detailed project report and submit that document as per the 
+given sample. You can host your model in the cloud platform, edge devices, or maybe local, 
+but with a proper justiﬁcation of your system design. 
+Try to optimize your solution on code level, architecture level, and mention all 
+of these things in your ﬁnal submission. 
+Mention your test cases for your project.

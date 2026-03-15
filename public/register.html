@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register - Secure & Share Docs</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="brand">
+          <div class="brand-badge">SS</div>
+          Secure & Share Docs
+        </div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </header>
+
+      <section class="section auth-shell">
+        <div class="auth-info">
+          <span class="badge">Secure onboarding</span>
+          <h1>Create your secure vault</h1>
+          <p>
+            Your profile links Aadhaar-based identity with protected document storage.
+            Demo OTP for local testing is <strong>123456</strong>.
+          </p>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-value">AES-256</div>
+              <div class="stat-label">Encryption</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">OTP</div>
+              <div class="stat-label">Verification</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">Logs</div>
+              <div class="stat-label">Every action</div>
+            </div>
+          </div>
+        </div>
+        <div class="auth-card">
+          <h1>Create your account</h1>
+          <p>Complete the form below to start storing and sharing documents.</p>
+          <form class="form" id="register-form">
+            <div>
+              <label for="name">Full Name</label>
+              <input id="name" type="text" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" required />
+            </div>
+            <div>
+              <label for="phone">Phone Number (with country code)</label>
+              <input id="phone" type="tel" placeholder="+91xxxxxxxxxx" required />
+            </div>
+            <div class="input-wrap">
+              <label for="aadhaar">Aadhaar Number</label>
+              <div class="input-eye">
+                <input id="aadhaar" type="password" minlength="12" maxlength="12" required />
+                <button type="button" class="eye-toggle" data-target="aadhaar" aria-label="Show Aadhaar">
+                  <span class="eye-icon"></span>
+                </button>
+              </div>
+            </div>
+            <div class="input-wrap">
+              <label for="password">Password</label>
+              <div class="input-eye">
+                <input id="password" type="password" minlength="6" required />
+                <button type="button" class="eye-toggle" data-target="password" aria-label="Show password">
+                  <span class="eye-icon"></span>
+                </button>
+              </div>
+            </div>
+            <div>
+              <label for="otp">Enter OTP</label>
+              <input id="otp" type="text" minlength="4" maxlength="6" />
+            </div>
+            <button type="submit">Verify OTP & Create Account</button>
+            <div class="status" id="register-status"></div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+  </body>
+</html>
